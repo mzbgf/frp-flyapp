@@ -57,6 +57,18 @@ kill_timeout = '2m0s'
 
 [[services]]
   protocol = 'tcp'
+  internal_port = 8080
+
+  [[services.ports]]
+    port = 8080
+
+  [services.concurrency]
+    type = 'connections'
+    hard_limit = 25
+    soft_limit = 20
+
+[[services]]
+  protocol = 'tcp'
   internal_port = 8022
 
   [[services.ports]]
