@@ -11,7 +11,7 @@ kill_timeout = '2m0s'
 [build]
 
 [http_service]
-  internal_port = 8080
+  internal_port = 80
   force_https = false
 
   [http_service.concurrency]
