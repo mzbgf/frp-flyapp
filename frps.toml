@@ -16,3 +16,7 @@ webServer.password = "{{ .Envs.FRP_DASHBOARD_PWD }}"
 # frp authentication
 auth.method = "token"
 auth.token = "{{ .Envs.FRP_TOKEN }}"
+
+vhostHTTPPort = 80
+vhostHTTPSPort = 443
+subdomainHost = "fly.hotme.top"
