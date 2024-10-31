@@ -12,4 +12,6 @@ FROM alpine:latest
 WORKDIR app
 COPY --from=build /go/bin/frps .
 COPY frps.toml .
-CMD ["/app/frps","-c","/app/frps.toml"]
+COPY entry.sh .
+COPY check.sh .
+CMD /app/entry.sh

@@ -12,7 +12,7 @@ kill_timeout = '2m0s'
 
 [http_service]
   internal_port = 80
-  force_https = false
+  force_https = true
 
   [http_service.concurrency]
     type = 'requests'

@@ -11,12 +11,14 @@ proxyBindAddr = "0.0.0.0"
 webServer.addr = "::"
 webServer.port = 8080
 webServer.user = "admin"
-webServer.password = "{{ .Envs.FRP_DASHBOARD_PWD }}"
+webServer.password = "{{ .Envs.FRP_TOKEN }}"
 
 # frp authentication
 auth.method = "token"
 auth.token = "{{ .Envs.FRP_TOKEN }}"
 
-vhostHTTPPort = 80
-vhostHTTPSPort = 443
+vhostHTTPPort = 8080
 subdomainHost = "fly.hotme.top"
+
+sshTunnelGateway.bindPort = 22
+
