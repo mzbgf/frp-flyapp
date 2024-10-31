@@ -9,9 +9,11 @@ RUN patch -p1 < patches/kcp-quic-fly-global-services.patch
 RUN CGO_ENABLED=0 go install ./cmd/frps
 
 FROM alpine:latest
+RUN apk update --no-cache
+RUN apk add --no-cache nginx
 WORKDIR app
 COPY --from=build /go/bin/frps .
 COPY frps.toml .
-COPY entry.sh .
-COPY check.sh .
+COPY *.sh ./
+RUN chmod +x *.sh
 CMD /app/entry.sh
